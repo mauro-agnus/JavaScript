@@ -5,12 +5,24 @@ const personas = [
   { nombre: "Carla", edad: 30 },
   { nombre: "Jorge", edad: 15 }
 ];
-const personas_mayores = [];
-for ( const persona of personas ) {
-    if ( persona.edad > 17 ) {
-        personas_mayores.push(persona.nombre);
-    }  
+//funcion que retorna personas mayores de edad.
+function personas_mayores(valor){
+    const mayores = [];
+    for(const persona of valor){
+        if(persona.edad >= 18){
+            mayores.push(persona);
+        }
+    }
+    return mayores;
 }
-const expresion = `Las personas mayores de este grupo son ${personas_mayores} `;
-
-console.log(expresion);
+//funcion que devuelve los nombres de las personas mayores.
+function nombres_personas_mayores(valor){
+    const solo_nombres = [];
+    for(const nombre of valor){
+        solo_nombres.push(nombre.nombre);
+    }
+    for(const nom of solo_nombres){
+        console.log(`Nombre: ${nom}`);
+    }
+}
+nombres_personas_mayores(personas_mayores(personas));
